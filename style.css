@@ -90,8 +90,11 @@ h1 span {
 }
 
 .btn {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   padding: 14px 27px;
+  min-height: 52px;
   border-radius: 8px;
   font-weight: 700;
   color: #ffffff;
@@ -130,11 +133,15 @@ h1 span {
   color: #d9232e;
 }
 
-.jobs,
-.points {
+/* JOB CARDS
+   All three cards use the same height and flex layout.
+   The CTA is pushed to the bottom so all buttons align perfectly.
+*/
+.jobs {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
+  align-items: stretch;
 }
 
 .job {
@@ -143,6 +150,10 @@ h1 span {
   padding: 25px;
   position: relative;
   background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 430px;
 }
 
 .job.highlight {
@@ -171,6 +182,7 @@ h1 span {
   color: #ffffff;
   font-weight: 800;
   margin-bottom: 15px;
+  flex-shrink: 0;
 }
 
 .job-icon.red {
@@ -188,29 +200,45 @@ h1 span {
 
 .job h3 {
   font-size: 21px;
+  line-height: 1.25;
   margin: 0 0 12px;
+  min-height: 53px;
+  display: flex;
+  align-items: flex-start;
 }
 
 .salary {
   font-size: 24px;
+  line-height: 1.2;
   font-weight: 800;
   color: #d9232e;
+  margin-bottom: 12px;
 }
 
 .job p {
   line-height: 1.55;
   color: #555555;
-  min-height: 70px;
+  margin: 0 0 20px;
+  flex: 1;
 }
 
 .job .btn {
   width: 100%;
+  min-height: 56px;
   text-align: center;
-  margin-top: 8px;
+  margin-top: auto;
+  flex-shrink: 0;
 }
 
 .why {
   background: #fffaf5;
+}
+
+.points {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  align-items: stretch;
 }
 
 .point {
@@ -330,6 +358,10 @@ h1 span {
   .jobs,
   .points {
     grid-template-columns: 1fr;
+  }
+
+  .job {
+    min-height: 0;
   }
 
   .section {
