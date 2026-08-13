@@ -84,3 +84,41 @@
     min-height: 430px !important;
   }
 }
+
+/* FINAL: identical CTA baseline for all job cards */
+.jobs {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 18px !important;
+  align-items: stretch !important;
+}
+
+.job {
+  position: relative !important;
+  height: 430px !important;
+  min-height: 430px !important;
+  padding: 25px !important;
+  padding-bottom: 95px !important;
+}
+
+.job-button {
+  position: absolute !important;
+  left: 25px !important;
+  right: 25px !important;
+  bottom: 25px !important;
+  width: calc(100% - 50px) !important;
+  height: 56px !important;
+  min-height: 56px !important;
+  margin: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+@media (max-width: 760px) {
+  .jobs { grid-template-columns: 1fr !important; }
+  .job {
+    height: 430px !important;
+    min-height: 430px !important;
+  }
+}
